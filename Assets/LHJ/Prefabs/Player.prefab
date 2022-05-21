@@ -139,7 +139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 283.64, y: 129}
+  m_AnchoredPosition: {x: 979, y: 321}
   m_SizeDelta: {x: 567.273, y: 147.327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4431489040806740508
@@ -724,6 +724,7 @@ MonoBehaviour:
   maxBulletTxt: {fileID: 6946861628932024790}
   notifyReload: {fileID: 1299146003973681369}
   isRoadingUI: {fileID: 8996002458629226074}
+  hpBar: {fileID: 1649959599559967387}
 --- !u!114 &392774505306111179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 358.17096, y: 0}
+  m_AnchoredPosition: {x: 984, y: 473}
   m_SizeDelta: {x: 716.341, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8996002458629226074

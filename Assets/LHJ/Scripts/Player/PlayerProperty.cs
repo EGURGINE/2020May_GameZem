@@ -155,5 +155,37 @@ namespace Players
         {
             SetHP(10f);
         }
+
+        bool damaging = false;
+
+        public void OnCollisionStay(Collision collision)
+        {
+            Enemy enemy = collision.transform.GetComponent<Enemy>();
+            //ICollision icollision = this.GetComponent<ICollision>();
+            if (enemy != null)
+            {
+                StartCoroutine(GetDamage(1f));
+            }
+        }
+
+        public void OnCollisionExit(Collision collision)
+        {
+            damaging = false;
+        }
+
+        public IEnumerator GetDamage(float _time)
+        {
+            if (damaging) yield break;
+
+            damaging = true;
+
+            while (true)
+            {
+                SetHP(10f);
+                yield return new WaitForSeconds(_time);
+                Debug.Log("damaging");
+                if (!damaging) yield break;
+            }
+        }
     }
 }
