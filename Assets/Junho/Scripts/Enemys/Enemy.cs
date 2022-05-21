@@ -1,10 +1,10 @@
 using UnityEngine;
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     GameObject target;// 플레이어
-    private float spd; // 스피드
-    [SerializeField] private float hp; // 체력
-    [SerializeField] private ParticleSystem deadPcy; // 죽는 이펙트
+    protected float spd; // 스피드
+    [SerializeField] protected float hp; // 체력
+    [SerializeField] protected ParticleSystem deadPcy; // 죽는 이펙트
 
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,9 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Damage(1);
         }
@@ -26,10 +26,6 @@ public class Enemy : MonoBehaviour
     public void Damage(float dmg)
     {
         hp -= dmg;
-        if (hp <= 0)
-        {
-            Instantiate(deadPcy).transform.position = transform.position;
-            Destroy(gameObject);
-        }
+        
     }
 }
