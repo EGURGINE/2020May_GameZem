@@ -84,7 +84,7 @@ namespace Players
             if (time < fireRate) return;
             //น฿ป็
             time = 0;
-
+            SoundManager.Instance.PlaySound(Sound_Effect.SHOT);
             staticBullets.GetObj(firePos.position, transform.forward);
             currentBullet--;
             currentBulletTxt.text = currentBullet.ToString();

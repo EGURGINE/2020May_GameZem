@@ -5,7 +5,6 @@ public abstract class Enemy : MonoBehaviour
     protected float spd; // ½ºÇÇµå
     [SerializeField] protected float hp; // Ã¼·Â
     [SerializeField] protected ParticleSystem deadPcy; // Á×´Â ÀÌÆåÆ®
-    private bool isSetting;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
     }
     public void Damage(float dmg)
     {
+        SoundManager.Instance.PlaySound(Sound_Effect.HIT);
         hp -= dmg;
-        
     }
 }
