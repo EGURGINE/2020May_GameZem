@@ -9,6 +9,8 @@ public class ItemPool : ObjectPool<Item>
 
     protected override void Awake()
     {
+        base.Awake();
+
         itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 3));   //딸기
         itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 5));   //참외
         itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 10));   //토마토
