@@ -24,17 +24,15 @@ namespace Players
             
 
             Player.playerController = this;
-            currentRotateY = transform.rotation.eulerAngles.y;
-
-            Cursor.lockState = CursorLockMode.Locked;
-
-            
+            currentRotateY = transform.rotation.eulerAngles.y;            
         }
 
         private void FixedUpdate()
         {
             Move();
         }
+
+        float xRotate = 0;
 
         void Move()
         {
@@ -44,23 +42,12 @@ namespace Players
             float yRotateSize = Input.GetAxis("MouseX") * rotateSpeed;
             float yRotate = transform.eulerAngles.y + yRotateSize;
 
+            float xRotateSize = -Input.GetAxis("Mouse Y") * rotateSpeed;
+            xRotate = Mathf.Clamp(xRotate + xRotateSize, -30, 30);
+
             velocity.x = inputX;
             velocity.y = 0;
             velocity.z = inputZ;
-
-            //if (velocity != Vector3.zero)
-            //{
-            //    float angle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
-
-            //    if (90.0f > angle && angle > -90.0f && angle != 0)
-            //    {
-            //        transform.Rotate((angle / Mathf.Abs(angle)) * Vector3.up * rotateSpeed * Time.deltaTime);
-            //    }
-            //    else
-            //    {
-            //        transform.Translate(velocity * speed * Time.deltaTime);
-            //    }
-            //}
 
             if(velocity != Vector3.zero)
             {
