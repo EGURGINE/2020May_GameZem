@@ -7,6 +7,6 @@ public class UIScene : MonoBehaviour
 {
     public void OnClickStartGameScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
