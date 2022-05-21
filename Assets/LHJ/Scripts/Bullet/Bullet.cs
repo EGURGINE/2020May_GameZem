@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         
         enemy?.Damage(attack);
 
-        Players.PlayerController.staticBullets.Return(this);
+        Players.PlayerProperty.staticBullets.Return(this);
     }
 
 }

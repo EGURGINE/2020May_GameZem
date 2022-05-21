@@ -8,7 +8,7 @@ public class ObjectPool<T> : MonoBehaviour  where T : MonoBehaviour
     [SerializeField] protected int count;
     protected Queue<T> objQueue = new Queue<T>();
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         Initialize(count);
     }
