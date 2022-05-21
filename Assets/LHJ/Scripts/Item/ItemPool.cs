@@ -14,7 +14,7 @@ public class ItemPool : ObjectPool<Item>
 
         itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 3));   //딸기
         itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 5));   //참외
-        itemList.Add(new Tuple<ItemType, float>(ItemType.Bullet, 10));   //토마토
+        itemList.Add(new Tuple<ItemType, float>(ItemType.Score, 300));   //토마토
         itemList.Add(new Tuple<ItemType, float>(ItemType.HP, 10));   //바나나
         itemList.Add(new Tuple<ItemType, float>(ItemType.HP, 5));   //수박
     }
