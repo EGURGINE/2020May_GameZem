@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject settingWnd;//¼³Á¤Ã¢
     private bool isSettingWnd;
 
+    [SerializeField] private Text playTime;
+
     private Transform playerTrans;
 
     private void Awake()
@@ -73,7 +75,9 @@ public class GameManager : MonoBehaviour
         time += Time.deltaTime;
         surviveTime += Time.deltaTime;
 
-        if(time > itemSpawnDelay)
+        playTime.text = TimeToString(surviveTime);
+
+        if (time > itemSpawnDelay)
         {
             time = 0;
             if (currentItemCount > maxItemCount) return;
@@ -139,6 +143,24 @@ public class GameManager : MonoBehaviour
         if (hour < 10) h = "0" + hour;
 
         surviveTimeTxt.text = "Time  :  " + h + ":" + m + ":" + s;
+    }
 
+    public string TimeToString(float _time)
+    {
+        int time = Mathf.RoundToInt(_time);
+        int second = time % 60;
+        int min = time / 60;
+        int hour = min / 60;
+        min = min % 60;
+
+        string s = second.ToString();
+        string m = min.ToString();
+        string h = hour.ToString();
+
+        if (second < 10) s = "0" + second;
+        if (min < 10) m = "0" + min;
+        if (hour < 10) h = "0" + hour;
+
+        return h + ":" + m + ":" + s;
     }
 }
