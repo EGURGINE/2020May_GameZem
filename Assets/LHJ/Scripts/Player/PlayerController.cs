@@ -9,36 +9,30 @@ namespace Players
     {
         [SerializeField] private float speed = 10f;
         [SerializeField] private float rotateSpeed;
-        [SerializeField] private float fireRate = 1f;
-        [SerializeField] private BulletObejctPool bullets;
-        [SerializeField] private Transform firePos;
-
-        public static BulletObejctPool staticBullets;
+        
         private Rigidbody playerRG;
         private Vector3 velocity;
         private float inputX;
         private float inputZ;
-        private float time;
+        
+
         private float currentRotateY;
 
         private void Awake()
         {
             playerRG = GetComponent<Rigidbody>();
-            staticBullets = bullets;
+            
 
             Player.playerController = this;
             currentRotateY = transform.rotation.eulerAngles.y;
+
+            Cursor.lockState = CursorLockMode.Locked;
+
+            
         }
 
         private void FixedUpdate()
         {
-            time += Time.fixedDeltaTime;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Fire();
-            }
-
             Move();
         }
 
@@ -46,37 +40,36 @@ namespace Players
         {
             inputX = Input.GetAxisRaw("Horizontal");
             inputZ = Input.GetAxisRaw("Vertical");
+            
+            float yRotateSize = Input.GetAxis("MouseX") * rotateSpeed;
+            float yRotate = transform.eulerAngles.y + yRotateSize;
 
             velocity.x = inputX;
             velocity.y = 0;
             velocity.z = inputZ;
 
-            if (velocity != Vector3.zero)
-            {
-                float angle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
+            //if (velocity != Vector3.zero)
+            //{
+            //    float angle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
 
-                if (90.0f > angle && angle > -90.0f && angle != 0)
-                {
-                    transform.Rotate((angle / Mathf.Abs(angle)) * Vector3.up * rotateSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Translate(velocity * speed * Time.deltaTime);
-                }
+            //    if (90.0f > angle && angle > -90.0f && angle != 0)
+            //    {
+            //        transform.Rotate((angle / Mathf.Abs(angle)) * Vector3.up * rotateSpeed * Time.deltaTime);
+            //    }
+            //    else
+            //    {
+            //        transform.Translate(velocity * speed * Time.deltaTime);
+            //    }
+            //}
+
+            if(velocity != Vector3.zero)
+            {
+                transform.Translate(velocity * speed * Time.deltaTime);
             }
 
+            transform.localEulerAngles = new Vector3(0, yRotate, 0);
         }
 
-   
-        void Fire()
-        {
-            if (time < fireRate) return;
-
-            //น฿ป็
-            time -= fireRate;
-
-            staticBullets.GetObj(firePos.position, transform.forward);
-        }
 
         public float GetSpeed()
         {

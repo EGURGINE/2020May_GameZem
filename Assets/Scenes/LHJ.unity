@@ -414,7 +414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &770689374
 Camera:
   m_ObjectHideFlags: 0
@@ -708,10 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotateSpeed: 90
-  fireRate: 1
-  bullets: {fileID: 816457647}
-  firePos: {fileID: 1912616916}
+  rotateSpeed: 1
 --- !u!114 &996041584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +722,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 0
+  fireRate: 0.1
   maxBullet: 0
+  bullets: {fileID: 816457647}
+  firePos: {fileID: 1912616916}
 --- !u!1 &1011740914
 GameObject:
   m_ObjectHideFlags: 0
