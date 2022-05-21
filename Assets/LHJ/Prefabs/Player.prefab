@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ffa44c900fd24478f7036409217326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2228213819598531235, guid: 125e8849a7c746046ad6d5aa24e3ad2f, type: 3}
+  prefab: {fileID: 2086789836503718011, guid: 7b9b687628bfa8d4da3657f599df1a7e, type: 3}
   count: 30
 --- !u!1 &3943080866109507181
 GameObject:
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
