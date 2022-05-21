@@ -1,10 +1,11 @@
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    GameObject target;
-    private float spd;
-    [SerializeField] private float hp;
-    [SerializeField] private ParticleSystem deadPcy;
+    GameObject target;// 플레이어
+    private float spd; // 스피드
+    [SerializeField] private float hp; // 체력
+    [SerializeField] private ParticleSystem deadPcy; // 죽는 이펙트
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, spd * Time.deltaTime);
+    }
+    public void Damage(int dmg)
+    {
+        hp -= dmg;
+        if (hp <= 0)
+        {
             Destroy(gameObject);
         }
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, spd * Time.deltaTime);
     }
     private void OnDestroy()
     {
         Instantiate(deadPcy).transform.position = transform.position;
     }
+   
 }
