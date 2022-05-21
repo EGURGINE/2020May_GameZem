@@ -50,9 +50,6 @@ namespace Players
             velocity.z = inputZ;
 
             velocity = velocity.normalized;
-
-            //이동 부문은 카메라, 플레이엉 이동 기획 나오고 구현
-
         }
 
         void Fire()
