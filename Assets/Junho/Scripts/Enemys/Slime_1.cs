@@ -6,6 +6,7 @@ public class Slime_1 : Enemy
 
         if (hp <= 0)
         {
+            GameManager.score += score;
             Instantiate(deadPcy).transform.position = transform.position;
             Destroy(gameObject);
         }

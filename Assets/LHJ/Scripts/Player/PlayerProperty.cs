@@ -115,7 +115,7 @@ namespace Players
 
         public void AddScore(float _amount)
         {
-
+            GameManager.score += _amount;
         }
 
         public void Reload()

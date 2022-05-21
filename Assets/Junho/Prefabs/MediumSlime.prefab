@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   deadPcy: {fileID: 6510125619236422600, guid: 6d7b01bdef4c9d44596d7108af762e72, type: 3}
+  score: 50
 --- !u!54 &-1819686311367357921
 Rigidbody:
   m_ObjectHideFlags: 0

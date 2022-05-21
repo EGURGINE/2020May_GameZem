@@ -77,6 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   deadPcy: {fileID: 6510125619236422600, guid: 6d7b01bdef4c9d44596d7108af762e72, type: 3}
+  score: 100
   miniSlime: {fileID: 6516021394924348023, guid: 52ef27bca56ff504d83bf21bb699aa56, type: 3}
 --- !u!1001 &1606907552359691903
 PrefabInstance:
