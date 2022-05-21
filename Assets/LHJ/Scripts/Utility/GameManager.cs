@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private Transform playerTrans;
 
+    [SerializeField] private GameObject[] mapObjs;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -53,6 +54,12 @@ public class GameManager : MonoBehaviour
         staticItemPool = itemPool;
 
         score = 0;
+        for (int i = 0; i < 1000; i++)
+        {
+            Instantiate(mapObjs[Random.Range(0, mapObjs.Length)]).transform.position = 
+                new Vector3(Random.Range(-200, 200), 0, Random.Range(-200, 200));
+        }
+        
     }
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1138,6 +1138,13 @@ MonoBehaviour:
   surviveTimeTxt: {fileID: 1216473022}
   settingWnd: {fileID: 1404283460}
   playTime: {fileID: 819041963}
+  mapObjs:
+  - {fileID: 1680945299127556990, guid: f9b33e53286817849a9cce7bae752418, type: 3}
+  - {fileID: 1503335383292781617, guid: 07c587f6f7718d340a9ed37a1559f46e, type: 3}
+  - {fileID: 1401312698697554788, guid: 5a0890a2e6e06494e8b86d9cb27264e8, type: 3}
+  - {fileID: 6514298902156198573, guid: 14cf31537041feb428dab1fc0afd5241, type: 3}
+  - {fileID: 3261390077944835059, guid: de2c482e25cc6c84a92a67251cb48fb9, type: 3}
+  - {fileID: 5442952716358163016, guid: ab45e08292b3d4947bdbbb4117499177, type: 3}
 --- !u!114 &533490491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,7 +3030,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 437c10ca60c012d40bfb9d528a45cbc3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
