@@ -21,7 +21,9 @@ namespace Players
         [SerializeField] Text currentMagazineTxt;
         [SerializeField] Text currentBulletTxt;
         [SerializeField] Text maxBulletTxt;
+        [SerializeField] GameObject notifyReload;
         [SerializeField] GameObject isRoadingUI;
+        [SerializeField] Image hpBar;
 
         private float time;
         private float currentBullet;
@@ -56,7 +58,9 @@ namespace Players
                 currentHP = maxHP;
             }
 
-            if(currentHP <= 0)
+            hpBar.fillAmount = currentHP / maxHP;
+
+            if (currentHP <= 0)
             {
                 playerDead?.Invoke();
             }
@@ -88,6 +92,8 @@ namespace Players
             staticBullets.GetObj(firePos.position, transform.forward);
             currentBullet--;
             currentBulletTxt.text = currentBullet.ToString();
+            if (currentBullet <= 0)
+                notifyReload.SetActive(true);
         }
 
         public void AddBullet(float _amount)
@@ -110,6 +116,7 @@ namespace Players
         {
             if (currentMagazine <= 0) return;
 
+            notifyReload.SetActive(false);
             StartCoroutine(Reloading());
         }
 
