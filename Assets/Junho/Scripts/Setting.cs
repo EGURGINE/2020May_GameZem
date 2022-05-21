@@ -23,9 +23,16 @@ public class Setting : MonoBehaviour
     private bool isFullScreen = true;// true : 풀스크린 , false : 창모드
     const int setWidth = 1920;
     const int setHeight = 1080;
-
     [SerializeField] private AudioSource bgm;
     public float volume;
+
+    private void Awake()
+    {
+        float curSfx = PlayerPrefs.GetFloat("Volume");
+        Debug.Log(curSfx);
+        bgm.volume = curSfx;
+        volume = curSfx;        
+    }
     public void WndChangeBtn()
     {
         SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
@@ -48,6 +55,7 @@ public class Setting : MonoBehaviour
     {
         bgm.volume = setVolume;
         volume = setVolume;
+        PlayerPrefs.SetFloat("Volume", setVolume);
     }
 
     public void ExitBtn()

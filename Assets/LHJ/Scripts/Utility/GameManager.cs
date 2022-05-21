@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private Transform playerTrans;
 
     [SerializeField] private GameObject[] mapObjs;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
         staticItemPool = itemPool;
 
         score = 0;
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 2000; i++)
         {
             GameObject obj = Instantiate(mapObjs[Random.Range(0, mapObjs.Length)]);
             obj.transform.position = 
@@ -101,9 +102,9 @@ public class GameManager : MonoBehaviour
 
             currentItemCount++;
             Vector3 randomPos = playerTrans.position;
-            randomPos.x = UnityEngine.Random.Range(-15f, 15f) + playerTrans.position.x;
+            randomPos.x = Random.Range(-15f, 15f) + playerTrans.position.x;
             randomPos.y = 0.5f;
-            randomPos.z = UnityEngine.Random.Range(-15f, 15f) + playerTrans.position.z;
+            randomPos.z = Random.Range(-15f, 15f) + playerTrans.position.z;
 
             staticItemPool.SetItemRandom(randomPos);
         }
@@ -183,7 +184,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            PlayerPrefs.SetFloat(i + "BestTime", bestScore[i]);
+            PlayerPrefs.SetFloat(i + "BestScore", bestScore[i]);
         }
 
         int rank = 1;
