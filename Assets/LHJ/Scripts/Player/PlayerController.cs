@@ -54,7 +54,7 @@ namespace Players
                 transform.Translate(velocity * speed * Time.deltaTime);
             }
 
-            transform.localEulerAngles = new Vector3(0, yRotate, 0);
+            transform.localEulerAngles = new Vector3(xRotate, yRotate, 0);
         }
 
 

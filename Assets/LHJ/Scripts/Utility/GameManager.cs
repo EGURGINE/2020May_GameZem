@@ -35,10 +35,10 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         var p = Instantiate(player);
-        var pu = Instantiate(puppy);
+        //var pu = Instantiate(puppy);
 
         p.transform.position = playerSpawnPoint.position;
-        pu.transform.position = puppySpawnPoint.position;
+        //pu.transform.position = puppySpawnPoint.position;
 
         currentItemCount = maxItemCount;
 

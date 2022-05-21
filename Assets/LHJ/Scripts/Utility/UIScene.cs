@@ -9,4 +9,9 @@ public class UIScene : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OnClickToTitle()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
