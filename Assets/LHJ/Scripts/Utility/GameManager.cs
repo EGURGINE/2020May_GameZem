@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text surviveTimeTxt;
     float surviveTime;
 
-    [SerializeField] private GameObject settingWnd;//¼³Á¤Ã¢
+    [SerializeField] private GameObject settingWnd;//ï¿½ï¿½ï¿½ï¿½Ã¢
     private bool isSettingWnd;
 
     [SerializeField] private Text playTime;
