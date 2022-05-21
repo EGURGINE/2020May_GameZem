@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int maxItemCount;
     static int currentItemCount;
     float time = 0;
+    int[] bestTime = new int[5];
+    [SerializeField] Text[] bestScore;
 
     [SerializeField] GameObject gameOver;
     [SerializeField] Text score;
@@ -129,6 +131,7 @@ public class GameManager : MonoBehaviour
     public void TimeTo60(float _time)
     {
         int time = Mathf.RoundToInt(_time);
+        SetScore(time);
         int second = time % 60;
         int min = time / 60;
         int hour = min / 60;
@@ -143,6 +146,47 @@ public class GameManager : MonoBehaviour
         if (hour < 10) h = "0" + hour;
 
         surviveTimeTxt.text = "Time  :  " + h + ":" + m + ":" + s;
+
+        for (int i = 0; i < 5; i++)
+        {
+            int Bsecond = bestTime[i] % 60;
+            int Bmin = time / 60;
+            int Bhour = min / 60;
+            min = Bmin % 60;
+
+            string Bs = second.ToString();
+            string Bm = min.ToString();
+            string Bh = hour.ToString();
+
+            if (Bsecond < 10) Bs = "0" + second;
+            if (Bmin < 10) Bm = "0" + min;
+            if (Bhour < 10) Bh = "0" + hour;
+
+            bestScore[i].text = "Ranking"+i+1+"  Time  :  " + Bh + ":" + Bm + ":" + Bs;
+        }
+    }
+    void SetScore(int curTime)
+    {
+        int temp = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            bestTime[i] = PlayerPrefs.GetInt(i + "BestTime");
+
+            while (bestTime[i] < curTime)
+            {
+                temp = bestTime[i];
+                bestTime[i] = curTime;
+
+                PlayerPrefs.SetInt(i + "BestTime", curTime);
+                curTime = temp;
+            }
+
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            PlayerPrefs.SetInt(i + "BestTime", bestTime[i]);
+        }
     }
 
     public string TimeToString(float _time)
