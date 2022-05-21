@@ -43,6 +43,7 @@ namespace Players
 
             collision.Add(SetHP);
             collision.Add(AddMagazine);
+            collision.Add(AddScore);
 
             maxBulletTxt.text = maxBullet.ToString();
             currentMagazineTxt.text = "ÅºÃ¢ ¼ö : " + currentMagazine;
@@ -110,6 +111,11 @@ namespace Players
         {
             currentMagazine += _amount;
             currentMagazineTxt.text = "ÅºÃ¢ ¼ö : " + currentMagazine;
+        }
+
+        public void AddScore(float _amount)
+        {
+
         }
 
         public void Reload()
