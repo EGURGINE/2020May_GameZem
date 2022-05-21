@@ -7,5 +7,6 @@ namespace Players
     public class Player
     {
         public static PlayerProperty playerProperty { get; set; }
+        public static PlayerController playerController { get; set; }
     }
 }

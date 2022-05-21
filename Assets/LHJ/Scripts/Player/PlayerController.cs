@@ -8,7 +8,6 @@ namespace Players
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float speed = 10f;
-        private static float staticSpeed;
         [SerializeField] private float rotateSpeed = 5f;
         [SerializeField] private float fireRate = 1f;
         [SerializeField] private BulletObejctPool bullets;
@@ -25,7 +24,8 @@ namespace Players
         {
             playerRG = GetComponent<Rigidbody>();
             staticBullets = bullets;
-            staticSpeed = speed;
+
+            Player.playerController = this;
         }
 
         private void FixedUpdate()
@@ -65,9 +65,9 @@ namespace Players
             staticBullets.GetObj(firePos.position, transform.forward);
         }
 
-        public static float GetSpeed()
+        public float GetSpeed()
         {
-            return staticSpeed;
+            return speed;
         }
     }
 }
