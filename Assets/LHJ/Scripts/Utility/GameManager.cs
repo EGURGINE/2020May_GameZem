@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     //score
     public static float score;
 
-
+    [SerializeField] private Transform plane;
     private Transform playerTrans;
 
     [SerializeField] private GameObject[] mapObjs;
@@ -56,8 +56,10 @@ public class GameManager : MonoBehaviour
         score = 0;
         for (int i = 0; i < 1000; i++)
         {
-            Instantiate(mapObjs[Random.Range(0, mapObjs.Length)]).transform.position = 
-                new Vector3(Random.Range(-200, 200), 0, Random.Range(-200, 200));
+            GameObject obj = Instantiate(mapObjs[Random.Range(0, mapObjs.Length)]);
+            obj.transform.position = 
+                new Vector3(Random.Range(-200f, 200f), 0, Random.Range(-200f, 200f));
+            obj.transform.SetParent(plane);
         }
         
     }
