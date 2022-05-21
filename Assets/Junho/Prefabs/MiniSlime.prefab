@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   deadPcy: {fileID: 6510125619236422600, guid: 6d7b01bdef4c9d44596d7108af762e72, type: 3}
+  score: 10
   mediumSlime: {fileID: 2388639708342602178, guid: 8269ee781d58b044799ebaf410e0551f, type: 3}
 --- !u!54 &731882144724954119
 Rigidbody:

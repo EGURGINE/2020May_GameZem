@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text[] bestScore;
 
     [SerializeField] GameObject gameOver;
-    [SerializeField] Text score;
+    [SerializeField] Text scoreTxt;
     [SerializeField] Text surviveTimeTxt;
     float surviveTime;
 
@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     private bool isSettingWnd;
 
     [SerializeField] private Text playTime;
+
+    //score
+    public static float score;
+
 
     private Transform playerTrans;
 
@@ -47,6 +51,8 @@ public class GameManager : MonoBehaviour
         currentItemCount = maxItemCount;
 
         staticItemPool = itemPool;
+
+        score = 0;
     }
 
 
@@ -126,6 +132,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         gameOver.SetActive(true);
         TimeTo60(surviveTime);
+        //scoreTxt.text = score.ToString();
     }
 
     public void TimeTo60(float _time)
