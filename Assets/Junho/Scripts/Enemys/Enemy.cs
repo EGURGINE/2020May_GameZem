@@ -5,6 +5,7 @@ public abstract class Enemy : MonoBehaviour
     protected float spd; // 스피드
     [SerializeField] protected float hp; // 체력
     [SerializeField] protected ParticleSystem deadPcy; // 죽는 이펙트
+    [SerializeField] protected float score;
 
     // Start is called before the first frame update
     void Start()
