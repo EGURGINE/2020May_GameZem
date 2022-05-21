@@ -6,7 +6,7 @@ namespace Players
 {
     public class PlayerCamera : MonoBehaviour
     {
-        private Transform player;
+        [SerializeField] private Transform puppy;
         private Vector3 pos;
 
         [SerializeField] private float xRotation;
@@ -14,7 +14,7 @@ namespace Players
 
         private void Awake()
         {
-            player = transform.parent;
+            puppy = transform.parent;
         }
 
         private void Update()
