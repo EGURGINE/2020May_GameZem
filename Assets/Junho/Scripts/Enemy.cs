@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, spd * Time.deltaTime);
     }
-    public void Damage(int dmg)
+    public void Damage(float dmg)
     {
         hp -= dmg;
         if (hp <= 0)

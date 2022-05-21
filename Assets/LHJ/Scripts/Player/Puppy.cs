@@ -6,8 +6,10 @@ using DG.Tweening;
 public class Puppy : MonoBehaviour
 {
     [SerializeField] private float minDistance = 5f;
+    [SerializeField] private float maxHP = 10f;
 
     private float speed;
+    private float currentHP;
     private Rigidbody puppyRigid;
     private GameObject target;
 
@@ -18,7 +20,7 @@ public class Puppy : MonoBehaviour
 
     private void Start()
     {
-        speed = Players.PlayerController.GetSpeed() * 0.8f;
+        speed = Players.Player.playerController.GetSpeed() * 0.8f;
         target = Players.Player.playerProperty.GetPlayerObj();
     }
 
