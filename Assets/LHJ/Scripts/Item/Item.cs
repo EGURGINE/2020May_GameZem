@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType {HP, Bullet};
+public enum ItemType {HP, Bullet, Score};
 
 public class Item : MonoBehaviour
 {
