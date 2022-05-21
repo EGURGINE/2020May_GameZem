@@ -23,7 +23,8 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Enemy enemy = collision.transform.GetComponent<Enemy>();
-        enemy.Damage(attack);
+        
+        enemy?.Damage(attack);
 
         Players.PlayerController.staticBullets.Return(this);
     }

@@ -8,7 +8,7 @@ namespace Players
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float speed = 10f;
-        [SerializeField] private float rotateSpeed = 5f;
+        [SerializeField] private float rotateSpeed;
         [SerializeField] private float fireRate = 1f;
         [SerializeField] private BulletObejctPool bullets;
         [SerializeField] private Transform firePos;
@@ -19,6 +19,7 @@ namespace Players
         private float inputX;
         private float inputZ;
         private float time;
+        private float currentRotateY;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace Players
             staticBullets = bullets;
 
             Player.playerController = this;
+            currentRotateY = transform.rotation.eulerAngles.y;
         }
 
         private void FixedUpdate()
@@ -49,9 +51,23 @@ namespace Players
             velocity.y = 0;
             velocity.z = inputZ;
 
-            velocity = velocity.normalized;
+            if (velocity != Vector3.zero)
+            {
+                float angle = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
+
+                if (90.0f > angle && angle > -90.0f && angle != 0)
+                {
+                    transform.Rotate((angle / Mathf.Abs(angle)) * Vector3.up * rotateSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    transform.Translate(velocity * speed * Time.deltaTime);
+                }
+            }
+
         }
 
+   
         void Fire()
         {
             if (time < fireRate) return;
