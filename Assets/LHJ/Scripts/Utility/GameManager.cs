@@ -132,13 +132,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         gameOver.SetActive(true);
         TimeTo60(surviveTime);
+        SetScore((int)score);
         //scoreTxt.text = score.ToString();
     }
 
     public void TimeTo60(float _time)
     {
         int time = Mathf.RoundToInt(_time);
-        SetScore(time);
+        
         int second = time % 60;
         int min = time / 60;
         int hour = min / 60;
