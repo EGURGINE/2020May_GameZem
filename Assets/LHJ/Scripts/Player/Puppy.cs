@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-public class Puppy : MonoBehaviour
+public interface ICollision
+{
+    public void Collide();
+}
+
+
+public class Puppy : MonoBehaviour, ICollision
 {
     [SerializeField] private float minDistance = 5f;
-    [SerializeField] private float maxHP = 10f;
+    [SerializeField] private float maxHP = 100f;
+
+    public static Action puppyDead;
 
     private float speed;
     private float currentHP;
@@ -16,6 +25,7 @@ public class Puppy : MonoBehaviour
     private void Awake()
     {
         puppyRigid = GetComponent<Rigidbody>();
+        currentHP = maxHP;
     }
 
     private void Start()
@@ -41,5 +51,19 @@ public class Puppy : MonoBehaviour
         transform.DOLookAt(target.transform.position, 1f);
         //transform.position += dir * speed * Time.deltaTime;
         puppyRigid.velocity = transform.forward.normalized * speed;
+    }
+
+    public void SetHP(float _amount)
+    {
+        currentHP += _amount;
+        if(currentHP <= 0)
+        {
+            puppyDead?.Invoke();
+        }
+    }
+
+    public void Collide()
+    {
+        SetHP(-15f);
     }
 }
