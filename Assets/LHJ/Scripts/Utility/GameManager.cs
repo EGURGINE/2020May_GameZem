@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text surviveTimeTxt;
     float surviveTime;
 
+    [SerializeField] private GameObject settingWnd;//¼³Á¤Ã¢
+    private bool isSettingWnd;
 
     private Transform playerTrans;
 
@@ -83,6 +85,24 @@ public class GameManager : MonoBehaviour
             randomPos.z = UnityEngine.Random.Range(-30f, 30f) + playerTrans.position.z;
 
             staticItemPool.SetItemRandom(randomPos);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isSettingWnd)
+            {
+                Time.timeScale = 1;
+                isSettingWnd = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                settingWnd.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                isSettingWnd = true;
+                settingWnd.SetActive(true);
+                Cursor.lockState = CursorLockMode.Confined;
+            }
         }
     }
 

@@ -5,11 +5,12 @@ public abstract class Enemy : MonoBehaviour
     protected float spd; // 스피드
     [SerializeField] protected float hp; // 체력
     [SerializeField] protected ParticleSystem deadPcy; // 죽는 이펙트
+    private bool isSetting;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player");
+        target = GameObject.Find("Player(Clone)");
         spd = Random.Range(1, 6);
     }
 

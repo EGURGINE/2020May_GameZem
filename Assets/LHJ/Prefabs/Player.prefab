@@ -504,8 +504,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters:
-  - {fileID: 5106867479298587, guid: 61abfd4c4c9e721459111046efe21942, type: 3}
   - {fileID: 3547194146401063480, guid: b180ba91006b0044d881861d88d640f6, type: 3}
+  - {fileID: 2388639708342602178, guid: 8269ee781d58b044799ebaf410e0551f, type: 3}
+  - {fileID: 6516021394924348023, guid: 52ef27bca56ff504d83bf21bb699aa56, type: 3}
+  - {fileID: 5106867479298587, guid: 61abfd4c4c9e721459111046efe21942, type: 3}
 --- !u!1 &3943080866648765583
 GameObject:
   m_ObjectHideFlags: 0

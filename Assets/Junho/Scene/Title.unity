@@ -2365,6 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingWnd: {fileID: 702731870}
+  screenMode: {fileID: 230395823}
   bgm: {fileID: 313662795}
   volume: 0.1
 --- !u!114 &1438835583

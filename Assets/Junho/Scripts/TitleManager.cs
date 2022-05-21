@@ -9,7 +9,8 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject settingWnd;
     public void StartBtn()
     {
-        //인 게임 씬 이동
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        SceneManager.LoadScene("GameScene");
     }
     public void SettingBtn()
     {
@@ -22,6 +23,7 @@ public class TitleManager : MonoBehaviour
     }
     public void ExitBtn()
     {
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
         Application.Quit();
     }
 }
