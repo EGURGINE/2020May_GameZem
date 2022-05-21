@@ -84,9 +84,9 @@ public class GameManager : MonoBehaviour
 
             currentItemCount++;
             Vector3 randomPos = playerTrans.position;
-            randomPos.x = UnityEngine.Random.Range(-30f, 30f) + playerTrans.position.x;
-            randomPos.y = 0f;
-            randomPos.z = UnityEngine.Random.Range(-30f, 30f) + playerTrans.position.z;
+            randomPos.x = UnityEngine.Random.Range(-15f, 15f) + playerTrans.position.x;
+            randomPos.y = 0.5f;
+            randomPos.z = UnityEngine.Random.Range(-15f, 15f) + playerTrans.position.z;
 
             staticItemPool.SetItemRandom(randomPos);
         }
