@@ -46,7 +46,7 @@ namespace Players
             collision.Add(AddScore);
 
             maxBulletTxt.text = maxBullet.ToString();
-            currentMagazineTxt.text = "ÅºÃ¢ ¼ö : " + currentMagazine;
+            currentMagazineTxt.text = currentMagazine.ToString();
             currentBulletTxt.text = currentBullet.ToString();
         }
 
@@ -110,7 +110,7 @@ namespace Players
         public void AddMagazine(float _amount)
         {
             currentMagazine += _amount;
-            currentMagazineTxt.text = "ÅºÃ¢ ¼ö : " + currentMagazine;
+            currentMagazineTxt.text = currentMagazine.ToString();
         }
 
         public void AddScore(float _amount)
@@ -189,7 +189,6 @@ namespace Players
             {
                 SetHP(10f);
                 yield return new WaitForSeconds(_time);
-                Debug.Log("damaging");
                 if (!damaging) yield break;
             }
         }
