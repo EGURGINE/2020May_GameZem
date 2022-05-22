@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject gameOver;
     [SerializeField] Text scoreTxt;
+    [SerializeField] Text scoreTxtInGame;
     [SerializeField] Text surviveTimeTxt;
     float surviveTime;
 
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         surviveTime += Time.deltaTime;
 
         playTime.text = TimeToString(surviveTime);
+        scoreTxtInGame.text = score.ToString();
 
         if (time > itemSpawnDelay)
         {
