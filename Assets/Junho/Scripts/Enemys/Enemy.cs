@@ -17,10 +17,6 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Damage(1);
-        }
         transform.LookAt(new Vector3(target.transform.position.x,0,target.transform.position.z));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, spd * Time.deltaTime);
     }
