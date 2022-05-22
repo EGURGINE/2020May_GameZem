@@ -63,6 +63,7 @@ namespace Players
 
             if (currentHP <= 0)
             {
+                SoundManager.Instance.PlaySound(Sound_Effect.OBSTACLE);
                 playerDead?.Invoke();
             }
         }
@@ -154,6 +155,8 @@ namespace Players
                 int num = (int)item.itemType;
                 collision[num].Invoke(item.amount);
                 GameManager.ReturnItem(item);
+                SoundManager.Instance.PlaySound(Sound_Effect.ITEM);
+
             }
         }
 
