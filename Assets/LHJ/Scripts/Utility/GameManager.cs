@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     //score
     public static float score;
+    [SerializeField] private Text curScoreTxt;
 
     [SerializeField] private Transform plane;
     private Transform playerTrans;
@@ -197,7 +198,7 @@ public class GameManager : MonoBehaviour
             bestScoreTxt[i].text = bestScore[i].ToString();
             rank++;
         }
-        //scoreTxt.text = "Score : " + curScore;
+        curScoreTxt.text = score.ToString(); 
     }
 
     public string TimeToString(float _time)

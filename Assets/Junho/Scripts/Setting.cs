@@ -34,7 +34,7 @@ public class Setting : MonoBehaviour
             curSfx = PlayerPrefs.GetFloat("Volume");
         
         Debug.Log(curSfx);
-        bgm.volume = curSfx;
+        bgm.volume = curSfx/2;
         volume = curSfx;
     }
     public void WndChangeBtn()
@@ -59,7 +59,7 @@ public class Setting : MonoBehaviour
 
     public void SetMusicVolume(float setVolume)
     {
-        bgm.volume = setVolume;
+        bgm.volume = setVolume/2;
         volume = setVolume;
         PlayerPrefs.SetFloat("Volume", setVolume);
     }
