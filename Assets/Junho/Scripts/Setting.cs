@@ -28,7 +28,11 @@ public class Setting : MonoBehaviour
 
     private void Awake()
     {
-        float curSfx = PlayerPrefs.GetFloat("Volume");
+        float curSfx = 1;
+
+        if (PlayerPrefs.HasKey("Volume"))
+            curSfx = PlayerPrefs.GetFloat("Volume");
+        
         Debug.Log(curSfx);
         bgm.volume = curSfx;
         volume = curSfx;
