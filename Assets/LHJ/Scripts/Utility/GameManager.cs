@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     float surviveTime;
 
     [SerializeField] private GameObject settingWnd;//����â
-    private bool isSettingWnd;
+    public static bool isSettingWnd;
 
     [SerializeField] private Text playTime;
 

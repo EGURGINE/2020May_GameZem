@@ -19,7 +19,7 @@ public class Setting : MonoBehaviour
     }
 
     [SerializeField] GameObject settingWnd;
-    [SerializeField] private Text screenMode;
+    public GameObject[] screenMode;
     private bool isFullScreen = true;// true : 풀스크린 , false : 창모드
     const int setWidth = 1920;
     const int setHeight = 1080;
@@ -31,7 +31,7 @@ public class Setting : MonoBehaviour
         float curSfx = PlayerPrefs.GetFloat("Volume");
         Debug.Log(curSfx);
         bgm.volume = curSfx;
-        volume = curSfx;        
+        volume = curSfx;
     }
     public void WndChangeBtn()
     {
@@ -39,12 +39,14 @@ public class Setting : MonoBehaviour
 
         if (isFullScreen)
         {
-            screenMode.text = "창 모드";
+            screenMode[0].SetActive(false);
+            screenMode[1].SetActive(true);
             isFullScreen = false;
         }
         else 
         {
-            screenMode.text = "전체화면";
+            screenMode[0].SetActive(true);
+            screenMode[1].SetActive(false);
             isFullScreen = true; 
         }
 
@@ -61,6 +63,9 @@ public class Setting : MonoBehaviour
     public void ExitBtn()
     {
         SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        Time.timeScale = 1;
+        GameManager.isSettingWnd = false;
+        Cursor.lockState = CursorLockMode.Locked;
         settingWnd.SetActive(false);
     }
 
