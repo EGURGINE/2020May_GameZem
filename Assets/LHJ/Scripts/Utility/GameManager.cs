@@ -41,11 +41,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject[] mapObjs;
 
+    [SerializeField] private GameObject Guide;
+
     private void Awake()
     {
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 0;
+        Guide.SetActive(true);
 
+       
         var p = Instantiate(player);
         //var pu = Instantiate(puppy);
 
@@ -65,6 +68,12 @@ public class GameManager : MonoBehaviour
             obj.transform.SetParent(plane);
         }
         
+    }
+
+    public void SetTimeScale1()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
 
