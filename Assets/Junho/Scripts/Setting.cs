@@ -60,12 +60,20 @@ public class Setting : MonoBehaviour
         PlayerPrefs.SetFloat("Volume", setVolume);
     }
 
-    public void ExitBtn()
+    public void InExitBtn()
     {
         SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
         Time.timeScale = 1;
         GameManager.isSettingWnd = false;
         Cursor.lockState = CursorLockMode.Locked;
+        settingWnd.SetActive(false);
+    }
+    public void TitleExitBtn()
+    {
+        SoundManager.Instance.PlaySound(Sound_Effect.BUTTON);
+        Time.timeScale = 1;
+        GameManager.isSettingWnd = false;
+        Cursor.lockState = CursorLockMode.None;
         settingWnd.SetActive(false);
     }
 
