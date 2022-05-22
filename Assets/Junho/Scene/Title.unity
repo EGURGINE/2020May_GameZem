@@ -1898,7 +1898,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1438835582}
         m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: ExitBtn
+        m_MethodName: TitleExitBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

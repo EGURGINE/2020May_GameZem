@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text[] bestScoreTxt;
 
     [SerializeField] GameObject gameOver;
-    [SerializeField] Text scoreTxt;
+    //[SerializeField] Text scoreTxt;
     [SerializeField] Text scoreTxtInGame;
-    [SerializeField] Text surviveTimeTxt;
+    //[SerializeField] Text surviveTimeTxt;
     float surviveTime;
 
     [SerializeField] private GameObject settingWnd;//����â
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
         if (min < 10) m = "0" + min;
         if (hour < 10) h = "0" + hour;
 
-        surviveTimeTxt.text = "Time  :  " + h + ":" + m + ":" + s;
+        //surviveTimeTxt.text = "Time  :  " + h + ":" + m + ":" + s;
     }
     void SetScore(float curScore)
     {
@@ -193,10 +193,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
 
-            bestScoreTxt[i].text = "Ranking " + rank + " : " + bestScore[i];
+            bestScoreTxt[i].text = bestScore[i].ToString();
             rank++;
         }
-        scoreTxt.text = "Score : " + curScore;
+        //scoreTxt.text = "Score : " + curScore;
     }
 
     public string TimeToString(float _time)
