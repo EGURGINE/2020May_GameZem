@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         p.transform.position = playerSpawnPoint.position;
         //pu.transform.position = puppySpawnPoint.position;
 
-        currentItemCount = maxItemCount;
+        currentItemCount = 0;
 
         staticItemPool = itemPool;
 
@@ -104,9 +104,10 @@ public class GameManager : MonoBehaviour
 
             currentItemCount++;
             Vector3 randomPos = playerTrans.position;
-            randomPos.x = Random.Range(-15f, 15f) + playerTrans.position.x;
+            randomPos.x = Random.Range(-5f, 5f) + playerTrans.position.x;
             randomPos.y = 0.5f;
-            randomPos.z = Random.Range(-15f, 15f) + playerTrans.position.z;
+            randomPos.z = Random.Range(-5f, 5f) + playerTrans.position.z;
+            Debug.Log("아이템");
 
             staticItemPool.SetItemRandom(randomPos);
         }
